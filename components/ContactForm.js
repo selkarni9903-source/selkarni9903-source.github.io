@@ -1,49 +1,28 @@
-function ContactForm(){
+function ContactForm() {
+    return (
+        <div>
+            <form id="contactForm" className="contact-form">
 
-    return(
+                <div className="input-group">
+                    <input id="name" type="text" placeholder="Nom" />
+                </div>
 
-        <form id="contactForm" className="contact-form">
+                <div className="input-group">
+                    <input id="email" type="email" placeholder="Email" />
+                </div>
 
-            <div className="input-group">
+                <div className="input-group">
+                    <textarea id="message" rows="6" placeholder="Message"></textarea>
+                </div>
 
-                <input
-                    type="text"
-                    id="name"
-                    placeholder="Votre nom"
-                />
+                <button className="submit-btn">Envoyer</button>
+            </form>
 
-            </div>
-
-            <div className="input-group">
-
-                <input
-                    type="email"
-                    id="email"
-                    placeholder="Votre email"
-                />
-
-            </div>
-
-            <div className="input-group">
-
-                <textarea
-                    id="message"
-                    rows="6"
-                    placeholder="Votre message"
-                ></textarea>
-
-            </div>
-
-            <button className="submit-btn">
-
-                Envoyer
-
-            </button>
-
-        </form>
+            <div id="messagesBox"></div>
+        </div>
     );
 }
 
 ReactDOM.createRoot(
-document.getElementById("contact-root")
+    document.getElementById("contact-root")
 ).render(<ContactForm />);

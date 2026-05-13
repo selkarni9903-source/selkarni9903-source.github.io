@@ -1,17 +1,19 @@
 const projects = [
 
     {
-        title:"Jeu 2D en C++",
-        description:"Jeu 2D orienté objet avec logique algorithmique et interaction utilisateur.",
-        technologies:"C++",
-        category:"cpp"
+        title: "Jeu 2D en C++",
+        description: "Jeu 2D orienté objet avec logique algorithmique et interaction utilisateur.",
+        technologies: "C++",
+        category: "cpp",
+        link: "https://dounya.itch.io/game-2d-cachette"
     },
 
     {
-        title:"Site de location de voitures de luxe",
-        description:"Site web moderne avec design premium et interface fluide.",
-        technologies:"HTML CSS JavaScript",
-        category:"web"
+        title: "Site de location de voitures de luxe",
+        description: "Site web moderne avec design premium et interface fluide.",
+        technologies: "HTML, CSS, JavaScript",
+        category: "web",
+        link: "https://hamzagabsi.github.io/LuxESTATTE-/"
     }
 
 ];
@@ -28,12 +30,20 @@ function ProjectCard(props){
 
             <p className="tech">
 
-                <strong>Technologies :</strong>
-                {props.technologies}
+                <strong>Technologies :</strong> {props.technologies}
 
             </p>
 
+            <a
+                href={props.link}
+                target="_blank"
+                className="project-link"
+            >
+                Accéder au projet
+            </a>
+
         </div>
+
     );
 }
 
@@ -44,7 +54,7 @@ function Projects(){
         <div className="projects-grid">
 
             {
-                projects.map((project,index)=>(
+                projects.map((project, index) => (
 
                     <ProjectCard
                         key={index}
@@ -52,15 +62,18 @@ function Projects(){
                         description={project.description}
                         technologies={project.technologies}
                         category={project.category}
+                        link={project.link}
                     />
 
                 ))
             }
 
         </div>
+
     );
+
 }
 
 ReactDOM.createRoot(
-document.getElementById("projects-root")
+    document.getElementById("projects-root")
 ).render(<Projects />);
